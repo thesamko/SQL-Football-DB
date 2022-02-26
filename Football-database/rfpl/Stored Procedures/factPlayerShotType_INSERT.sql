@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE rfpl.factPlayerShotType_INSERT AS BEGIN INSERT INTO  rfpl.factPlayerShotType SELECT player_id, shot_type_key, goals_scored, shots, xG, assists, key_passes, xA, non_penalty_goals, npxG, SEASON FROM [landingdb].rfpl.factPlayerShotType END

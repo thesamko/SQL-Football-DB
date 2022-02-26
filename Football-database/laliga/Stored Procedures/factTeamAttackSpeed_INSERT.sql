@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE laliga.factTeamAttackSpeed_INSERT AS BEGIN INSERT INTO  laliga.factTeamAttackSpeed SELECT team_id, attack_speed_key, shots_for, goals_for, xG_for, shots_against, goals_against, xG_against, SEASON FROM [landingdb].laliga.factTeamAttackSpeed END

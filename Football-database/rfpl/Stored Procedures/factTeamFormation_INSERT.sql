@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE rfpl.factTeamFormation_INSERT AS BEGIN INSERT INTO  rfpl.factTeamFormation SELECT team_id, formation, minutes_played, shots_for, goals_for, xG_for, shots_against, goals_against, xG_against, SEASON FROM [landingdb].rfpl.factTeamFormation END

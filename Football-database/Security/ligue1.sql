@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [ligue1]
+    AUTHORIZATION [dbo];
+

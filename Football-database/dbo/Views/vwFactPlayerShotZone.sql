@@ -1,0 +1,96 @@
+﻿
+CREATE VIEW [dbo].[vwFactPlayerShotZone] AS (
+SELECT  [player_id]
+      ,[shot_zone_key]
+      ,[goals_scored]
+      ,[shots]
+      ,[xG]
+      ,[assists]
+      ,[key_passes]
+      ,[xA]
+      ,[non_penalty_goals]
+      ,[npxG]
+	  ,'SerieA' [league]
+      ,[season]
+  FROM [seriea].[factPlayerShotZone]
+
+  UNION ALL
+
+  SELECT  [player_id]
+      ,[shot_zone_key]
+      ,[goals_scored]
+      ,[shots]
+      ,[xG]
+      ,[assists]
+      ,[key_passes]
+      ,[xA]
+      ,[non_penalty_goals]
+      ,[npxG]
+	  ,'Bundesliga' [league]
+      ,[season]
+  FROM [bundesliga].[factPlayerShotZone]
+
+  UNION ALL
+
+  SELECT  [player_id]
+      ,[shot_zone_key]
+      ,[goals_scored]
+      ,[shots]
+      ,[xG]
+      ,[assists]
+      ,[key_passes]
+      ,[xA]
+      ,[non_penalty_goals]
+      ,[npxG]
+	  ,'EPL' [league]
+      ,[season]
+  FROM [epl].[factPlayerShotZone]
+
+  UNION ALL
+
+  SELECT  [player_id]
+      ,[shot_zone_key]
+      ,[goals_scored]
+      ,[shots]
+      ,[xG]
+      ,[assists]
+      ,[key_passes]
+      ,[xA]
+      ,[non_penalty_goals]
+      ,[npxG]
+	  ,'Ligue1' [league]
+      ,[season]
+  FROM [ligue1].[factPlayerShotZone]
+
+  UNION ALL
+
+  SELECT  [player_id]
+      ,[shot_zone_key]
+      ,[goals_scored]
+      ,[shots]
+      ,[xG]
+      ,[assists]
+      ,[key_passes]
+      ,[xA]
+      ,[non_penalty_goals]
+      ,[npxG]
+	  ,'RFPL' [league]
+      ,[season]
+  FROM [rfpl].[factPlayerShotZone]
+
+  UNION ALL
+
+  SELECT  [player_id]
+      ,[shot_zone_key]
+      ,[goals_scored]
+      ,[shots]
+      ,[xG]
+      ,[assists]
+      ,[key_passes]
+      ,[xA]
+      ,[non_penalty_goals]
+      ,[npxG]
+	  ,'LaLiga' [league]
+      ,[season]
+  FROM [laliga].[factPlayerShotZone]
+  )

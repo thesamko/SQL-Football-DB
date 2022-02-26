@@ -1,0 +1,25 @@
+﻿CREATE TABLE [ligue1].[factMatches] (
+    [match_id]                        INT            NOT NULL,
+    [team_id]                         SMALLINT       NULL,
+    [home_or_away]                    VARCHAR (2)    NULL,
+    [expected_goals]                  DECIMAL (5, 2) NULL,
+    [expected_goals_assists]          DECIMAL (5, 2) NULL,
+    [not_penalty_xg]                  DECIMAL (5, 2) NULL,
+    [not_penalty_xg_assists]          DECIMAL (5, 2) NULL,
+    [passes_defensive_action_attack]  SMALLINT       NULL,
+    [passes_defensive_action_defence] SMALLINT       NULL,
+    [deep_passes]                     SMALLINT       NULL,
+    [deep_passes_allowed]             SMALLINT       NULL,
+    [goals_scored]                    SMALLINT       NULL,
+    [goals_conceded]                  SMALLINT       NULL,
+    [expected_points]                 DECIMAL (5, 2) NULL,
+    [match_outcome]                   VARCHAR (3)    NULL,
+    [date]                            DATE           NULL,
+    [wins]                            SMALLINT       NULL,
+    [draws]                           SMALLINT       NULL,
+    [loses]                           SMALLINT       NULL,
+    [points]                          SMALLINT       NULL,
+    [non_penalty_xg_diff]             DECIMAL (5, 2) NULL,
+    [season]                          SMALLINT       NULL
+);
+

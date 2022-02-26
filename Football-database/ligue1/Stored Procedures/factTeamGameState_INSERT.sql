@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE ligue1.factTeamGameState_INSERT AS BEGIN INSERT INTO  ligue1.factTeamGameState SELECT team_id, game_state, minutes_played, shots_for, goals_for, xG_for, shots_against, goals_against, xG_against, SEASON FROM [landingdb].ligue1.factTeamGameState END

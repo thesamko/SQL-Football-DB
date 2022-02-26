@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE bundesliga.factTeamShotZone_INSERT AS BEGIN INSERT INTO  bundesliga.factTeamShotZone SELECT team_id, shot_zone_key, shots_for, goals_for, xG_for, shots_against, goals_against, xG_against, SEASON FROM [landingdb].bundesliga.factTeamShotZone END

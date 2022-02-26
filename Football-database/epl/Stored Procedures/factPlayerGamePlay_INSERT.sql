@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE epl.factPlayerGamePlay_INSERT AS BEGIN INSERT INTO  epl.factPlayerGamePlay SELECT player_id, game_play_key, goals_scored, shots, xG, assists, key_passes, xA, non_penalty_goals, npxG, SEASON FROM [landingdb].epl.factPlayerGamePlay END

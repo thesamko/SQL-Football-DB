@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Football_database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{525b7d0f-9fae-4f80-a82e-6e830da0f1b7}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Football_database</RootNamespace>
+    <AssemblyName>Football_database</AssemblyName>
+    <ModelCollation>1049,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Cyrillic_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dwh\" />
+    <Folder Include="dwh\Tables\" />
+    <Folder Include="rfpl\" />
+    <Folder Include="rfpl\Tables\" />
+    <Folder Include="bundesliga\" />
+    <Folder Include="bundesliga\Tables\" />
+    <Folder Include="epl\" />
+    <Folder Include="epl\Tables\" />
+    <Folder Include="laliga\" />
+    <Folder Include="laliga\Tables\" />
+    <Folder Include="ligue1\" />
+    <Folder Include="ligue1\Tables\" />
+    <Folder Include="seriea\" />
+    <Folder Include="seriea\Tables\" />
+    <Folder Include="app\" />
+    <Folder Include="app\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="epl\Stored Procedures\" />
+    <Folder Include="bundesliga\Stored Procedures\" />
+    <Folder Include="laliga\Stored Procedures\" />
+    <Folder Include="ligue1\Stored Procedures\" />
+    <Folder Include="rfpl\Stored Procedures\" />
+    <Folder Include="seriea\Stored Procedures\" />
+    <Folder Include="app\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dwh\Tables\factPlayerShotType.sql" />
+    <Build Include="dwh\Tables\dimAttackSpeed.sql" />
+    <Build Include="dwh\Tables\factTeamShotZone.sql" />
+    <Build Include="dwh\Tables\factPlayerShotZone.sql" />
+    <Build Include="dwh\Tables\factMinMaxPlayerStats.sql" />
+    <Build Include="dwh\Tables\factTeamShotType.sql" />
+    <Build Include="dwh\Tables\factPlayerShots.sql" />
+    <Build Include="rfpl\Tables\factPlayerGamePlay.sql" />
+    <Build Include="dwh\Tables\factPlayerSeasonStats.sql" />
+    <Build Include="rfpl\Tables\factPlayerShotType.sql" />
+    <Build Include="rfpl\Tables\factMinMaxPlayerStats.sql" />
+    <Build Include="rfpl\Tables\factPlayerShots.sql" />
+    <Build Include="rfpl\Tables\factPlayerSeasonStats.sql" />
+    <Build Include="dwh\Tables\factTeamAttackSpeed.sql" />
+    <Build Include="rfpl\Tables\factTeamAttackSpeed.sql" />
+    <Build Include="rfpl\Tables\factTeamFormation.sql" />
+    <Build Include="rfpl\Tables\factTeamGamePlay.sql" />
+    <Build Include="rfpl\Tables\factTeamGameState.sql" />
+    <Build Include="dwh\Tables\factTeamFormation.sql" />
+    <Build Include="rfpl\Tables\factTeamShotType.sql" />
+    <Build Include="rfpl\Tables\factTeamShotZone.sql" />
+    <Build Include="rfpl\Tables\factTeamTiming.sql" />
+    <Build Include="bundesliga\Tables\dimPlayers.sql" />
+    <Build Include="rfpl\Tables\factPlayerPosition.sql" />
+    <Build Include="dwh\Tables\factTeamGamePlay.sql" />
+    <Build Include="rfpl\Tables\factMatches.sql" />
+    <Build Include="epl\Tables\dimPlayers.sql" />
+    <Build Include="rfpl\Tables\factMatchLineups.sql" />
+    <Build Include="laliga\Tables\dimPlayers.sql" />
+    <Build Include="epl\Tables\factMatchLineups.sql" />
+    <Build Include="ligue1\Tables\dimPlayers.sql" />
+    <Build Include="epl\Tables\factPlayerGamePlay.sql" />
+    <Build Include="rfpl\Tables\dimPlayers.sql" />
+    <Build Include="dwh\Tables\factTeamGameState.sql" />
+    <Build Include="epl\Tables\factPlayerShotType.sql" />
+    <Build Include="seriea\Tables\dimPlayers.sql" />
+    <Build Include="epl\Tables\factMinMaxPlayerStats.sql" />
+    <Build Include="epl\Tables\factPlayerShots.sql" />
+    <Build Include="epl\Tables\factPlayerSeasonStats.sql" />
+    <Build Include="dwh\Tables\factTeamTiming.sql" />
+    <Build Include="epl\Tables\factTeamAttackSpeed.sql" />
+    <Build Include="epl\Tables\factTeamFormation.sql" />
+    <Build Include="epl\Tables\factTeamGamePlay.sql" />
+    <Build Include="bundesliga\Tables\dimTeams.sql" />
+    <Build Include="epl\Tables\factTeamGameState.sql" />
+    <Build Include="epl\Tables\dimTeams.sql" />
+    <Build Include="epl\Tables\factTeamShotType.sql" />
+    <Build Include="laliga\Tables\dimTeams.sql" />
+    <Build Include="epl\Tables\factTeamShotZone.sql" />
+    <Build Include="ligue1\Tables\dimTeams.sql" />
+    <Build Include="epl\Tables\factTeamTiming.sql" />
+    <Build Include="rfpl\Tables\dimTeams.sql" />
+    <Build Include="epl\Tables\factPlayerPosition.sql" />
+    <Build Include="seriea\Tables\dimTeams.sql" />
+    <Build Include="epl\Tables\factMatches.sql" />
+    <Build Include="bundesliga\Tables\factMatchLineups.sql" />
+    <Build Include="bundesliga\Tables\factPlayerGamePlay.sql" />
+    <Build Include="bundesliga\Tables\factPlayerShotType.sql" />
+    <Build Include="bundesliga\Tables\factMinMaxPlayerStats.sql" />
+    <Build Include="bundesliga\Tables\factPlayerShots.sql" />
+    <Build Include="bundesliga\Tables\factPlayerSeasonStats.sql" />
+    <Build Include="bundesliga\Tables\dimMatches.sql" />
+    <Build Include="bundesliga\Tables\factTeamAttackSpeed.sql" />
+    <Build Include="epl\Tables\dimMatches.sql" />
+    <Build Include="bundesliga\Tables\factTeamFormation.sql" />
+    <Build Include="laliga\Tables\dimMatches.sql" />
+    <Build Include="bundesliga\Tables\factTeamGamePlay.sql" />
+    <Build Include="ligue1\Tables\dimMatches.sql" />
+    <Build Include="bundesliga\Tables\factTeamGameState.sql" />
+    <Build Include="rfpl\Tables\dimMatches.sql" />
+    <Build Include="bundesliga\Tables\factTeamShotType.sql" />
+    <Build Include="seriea\Tables\dimMatches.sql" />
+    <Build Include="bundesliga\Tables\factTeamShotZone.sql" />
+    <Build Include="bundesliga\Tables\factTeamTiming.sql" />
+    <Build Include="bundesliga\Tables\factPlayerPosition.sql" />
+    <Build Include="bundesliga\Tables\factMatches.sql" />
+    <Build Include="laliga\Tables\factMatchLineups.sql" />
+    <Build Include="laliga\Tables\factPlayerGamePlay.sql" />
+    <Build Include="laliga\Tables\factPlayerShotType.sql" />
+    <Build Include="laliga\Tables\factMinMaxPlayerStats.sql" />
+    <Build Include="laliga\Tables\factPlayerShots.sql" />
+    <Build Include="laliga\Tables\factPlayerSeasonStats.sql" />
+    <Build Include="laliga\Tables\factTeamAttackSpeed.sql" />
+    <Build Include="app\Tables\Telemetry.sql" />
+    <Build Include="laliga\Tables\factTeamFormation.sql" />
+    <Build Include="app\Tables\RunLog.sql" />
+    <Build Include="laliga\Tables\factTeamGamePlay.sql" />
+    <Build Include="laliga\Tables\factTeamGameState.sql" />
+    <Build Include="laliga\Tables\factTeamShotType.sql" />
+    <Build Include="dwh\Tables\dimShotZone.sql" />
+    <Build Include="laliga\Tables\factTeamShotZone.sql" />
+    <Build Include="laliga\Tables\factTeamTiming.sql" />
+    <Build Include="laliga\Tables\factPlayerPosition.sql" />
+    <Build Include="laliga\Tables\factMatches.sql" />
+    <Build Include="rfpl\Tables\factPlayerShotZone.sql" />
+    <Build Include="ligue1\Tables\factMatchLineups.sql" />
+    <Build Include="epl\Tables\factPlayerShotZone.sql" />
+    <Build Include="ligue1\Tables\factPlayerGamePlay.sql" />
+    <Build Include="bundesliga\Tables\factPlayerShotZone.sql" />
+    <Build Include="dbo\Tables\dimMatches_BATCH.sql" />
+    <Build Include="ligue1\Tables\factPlayerShotType.sql" />
+    <Build Include="laliga\Tables\factPlayerShotZone.sql" />
+    <Build Include="dwh\Tables\dimMatches.sql" />
+    <Build Include="ligue1\Tables\factMinMaxPlayerStats.sql" />
+    <Build Include="ligue1\Tables\factPlayerShotZone.sql" />
+    <Build Include="ligue1\Tables\factPlayerShots.sql" />
+    <Build Include="seriea\Tables\factPlayerShotZone.sql" />
+    <Build Include="ligue1\Tables\factPlayerSeasonStats.sql" />
+    <Build Include="dwh\Tables\dimTeams.sql" />
+    <Build Include="ligue1\Tables\factTeamAttackSpeed.sql" />
+    <Build Include="ligue1\Tables\factTeamFormation.sql" />
+    <Build Include="dbo\Tables\dimPlayers_BATCH.sql" />
+    <Build Include="ligue1\Tables\factTeamGamePlay.sql" />
+    <Build Include="dwh\Tables\dimPlayers.sql" />
+    <Build Include="ligue1\Tables\factTeamGameState.sql" />
+    <Build Include="dbo\Tables\dimTeams_BATCH.sql" />
+    <Build Include="ligue1\Tables\factTeamShotType.sql" />
+    <Build Include="ligue1\Tables\factTeamShotZone.sql" />
+    <Build Include="ligue1\Tables\factTeamTiming.sql" />
+    <Build Include="ligue1\Tables\factPlayerPosition.sql" />
+    <Build Include="ligue1\Tables\factMatches.sql" />
+    <Build Include="seriea\Tables\factMatchLineups.sql" />
+    <Build Include="seriea\Tables\factPlayerGamePlay.sql" />
+    <Build Include="seriea\Tables\factPlayerShotType.sql" />
+    <Build Include="seriea\Tables\factMinMaxPlayerStats.sql" />
+    <Build Include="seriea\Tables\factPlayerShots.sql" />
+    <Build Include="seriea\Tables\factPlayerSeasonStats.sql" />
+    <Build Include="seriea\Tables\factTeamAttackSpeed.sql" />
+    <Build Include="seriea\Tables\factTeamFormation.sql" />
+    <Build Include="seriea\Tables\factTeamGamePlay.sql" />
+    <Build Include="seriea\Tables\factTeamGameState.sql" />
+    <Build Include="seriea\Tables\factTeamShotType.sql" />
+    <Build Include="seriea\Tables\factTeamShotZone.sql" />
+    <Build Include="seriea\Tables\factTeamTiming.sql" />
+    <Build Include="seriea\Tables\factPlayerPosition.sql" />
+    <Build Include="seriea\Tables\factMatches.sql" />
+    <Build Include="dwh\Tables\dimGamePlay.sql" />
+    <Build Include="dwh\Tables\dimShotType.sql" />
+    <Build Include="dwh\Tables\factMatches.sql" />
+    <Build Include="dwh\Tables\factMatchLineups.sql" />
+    <Build Include="dwh\Tables\dimOutcomeType.sql" />
+    <Build Include="dwh\Tables\factPlayerGamePlay.sql" />
+    <Build Include="dwh\Tables\factPlayerPosition.sql" />
+    <Build Include="dwh\Tables\dimPosition.sql" />
+    <Build Include="dwh\Tables\dimActionType.sql" />
+    <Build Include="dbo\Views\vwFactPlayerShotType.sql" />
+    <Build Include="dbo\Views\vwFactTeamShotZone.sql" />
+    <Build Include="dbo\Views\vwFactPlayerShotZone.sql" />
+    <Build Include="dbo\Views\vwFactMinMaxPlayerStats.sql" />
+    <Build Include="dbo\Views\vwFactTeamShotType.sql" />
+    <Build Include="dbo\Views\vwFactPlayerShots.sql" />
+    <Build Include="dbo\Views\vwFactPlayerSeasonStats.sql" />
+    <Build Include="dbo\Views\vwFactTeamAttackSpeed.sql" />
+    <Build Include="dbo\Views\vwFactTeamFormation.sql" />
+    <Build Include="dbo\Views\vwFactTeamGamePlay.sql" />
+    <Build Include="dbo\Views\vwFactTeamGameState.sql" />
+    <Build Include="dbo\Views\vwFactTeamTiming.sql" />
+    <Build Include="dbo\Views\vwFactMatches.sql" />
+    <Build Include="dbo\Views\vwFactMatchLineups.sql" />
+    <Build Include="dbo\Views\vwFactPlayerGamePlay.sql" />
+    <Build Include="dbo\Views\vwFactPlayerPosition.sql" />
+    <Build Include="dbo\Stored Procedures\dimAction_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factMatchLineups_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factPlayerGamePlay_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factPlayerShotType_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimAttackSpeed_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factPlayerShotType_RELOAD.sql" />
+    <Build Include="epl\Stored Procedures\factMinMaxPlayerStats_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factPlayerShots_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factPlayerSeasonStats_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factTeamAttackSpeed_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factTeamShotZone_RELOAD.sql" />
+    <Build Include="epl\Stored Procedures\factTeamFormation_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factTeamGamePlay_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factTeamGameState_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factTeamShotType_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factPlayerShotZone_RELOAD.sql" />
+    <Build Include="epl\Stored Procedures\factTeamShotZone_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factTeamTiming_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factPlayerPosition_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factMinMaxPlayerStats_RELOAD.sql" />
+    <Build Include="epl\Stored Procedures\factMatches_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factMatchLineups_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factPlayerGamePlay_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factPlayerShotType_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factMinMaxPlayerStats_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factPlayerShots_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factTeamShotType_RELOAD.sql" />
+    <Build Include="bundesliga\Stored Procedures\factPlayerSeasonStats_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factTeamAttackSpeed_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factTeamFormation_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factTeamGamePlay_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factPlayerShots_RELOAD.sql" />
+    <Build Include="bundesliga\Stored Procedures\factTeamGameState_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factTeamShotType_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factTeamShotZone_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factTeamTiming_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factPlayerSeasonStats_RELOAD.sql" />
+    <Build Include="bundesliga\Stored Procedures\factPlayerPosition_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factMatches_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factMatchLineups_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factPlayerGamePlay_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factTeamAttackSpeed_RELOAD.sql" />
+    <Build Include="laliga\Stored Procedures\factPlayerShotType_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factMinMaxPlayerStats_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factPlayerShots_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factPlayerSeasonStats_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factTeamFormation_RELOAD.sql" />
+    <Build Include="laliga\Stored Procedures\factTeamAttackSpeed_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\dimPlayers_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factTeamFormation_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factTeamGamePlay_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factTeamGameState_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factTeamGamePlay_RELOAD.sql" />
+    <Build Include="laliga\Stored Procedures\factTeamShotType_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factTeamShotZone_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factTeamTiming_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\dimPlayers_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factPlayerPosition_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\dimPlayers_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factTeamGameState_RELOAD.sql" />
+    <Build Include="laliga\Stored Procedures\factMatches_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\dimPlayers_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factMatchLineups_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\dimPlayers_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factPlayerGamePlay_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\dimPlayers_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factPlayerShotType_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factTeamTiming_RELOAD.sql" />
+    <Build Include="ligue1\Stored Procedures\factMinMaxPlayerStats_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factPlayerShots_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factPlayerSeasonStats_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factTeamAttackSpeed_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factTeamFormation_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factTeamGamePlay_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\dimTeams_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factTeamGameState_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\dimTeams_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factTeamShotType_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\dimTeams_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factTeamShotZone_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\dimTeams_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factTeamTiming_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\dimTeams_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factPlayerPosition_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\dimTeams_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factMatches_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factMatchLineups_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factPlayerGamePlay_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factPlayerShotType_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factMinMaxPlayerStats_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factPlayerShots_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factPlayerSeasonStats_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\dimMatches_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factTeamAttackSpeed_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\dimMatches_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factTeamFormation_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\dimMatches_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factTeamGamePlay_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\dimMatches_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factTeamGameState_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\dimMatches_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factTeamShotType_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\dimMatches_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factTeamShotZone_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factTeamTiming_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factPlayerPosition_INSERT.sql" />
+    <Build Include="app\Stored Procedures\CloseTelemetry.sql" />
+    <Build Include="seriea\Stored Procedures\factMatches_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimPosition_INSERT.sql" />
+    <Build Include="app\Stored Procedures\OpenTelemetry.sql" />
+    <Build Include="app\Stored Procedures\SetProcedureLog.sql" />
+    <Build Include="app\Stored Procedures\CloseProcedureLog.sql" />
+    <Build Include="dbo\Stored Procedures\dimShotZone_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\factPlayerShotZone_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factPlayerShotZone_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\factPlayerShotZone_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\factPlayerShotZone_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\factPlayerShotZone_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\factPlayerShotZone_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\dimMatches_BATCH_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\dimMatches_BATCH_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\dimMatches_BATCH_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\dimMatches_BATCH_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\dimMatches_BATCH_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\dimMatches_BATCH_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\dimPlayers_BATCH_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\dimPlayers_BATCH_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\dimPlayers_BATCH_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\dimPlayers_BATCH_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\dimPlayers_BATCH_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\dimPlayers_BATCH_INSERT.sql" />
+    <Build Include="bundesliga\Stored Procedures\dimTeams_BATCH_INSERT.sql" />
+    <Build Include="epl\Stored Procedures\dimTeams_BATCH_INSERT.sql" />
+    <Build Include="laliga\Stored Procedures\dimTeams_BATCH_INSERT.sql" />
+    <Build Include="ligue1\Stored Procedures\dimTeams_BATCH_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\dimTeams_BATCH_INSERT.sql" />
+    <Build Include="seriea\Stored Procedures\dimTeams_BATCH_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimPlayers_UPSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimTeams_UPSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimGamePlay_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimMatches_UPSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factPlayerGamePlay_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factPlayerShotType_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factMatches_RELOAD.sql" />
+    <Build Include="rfpl\Stored Procedures\factMinMaxPlayerStats_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimShotType_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factPlayerShots_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factPlayerSeasonStats_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factTeamAttackSpeed_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factMatchLineups_RELOAD.sql" />
+    <Build Include="rfpl\Stored Procedures\factTeamFormation_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factTeamGamePlay_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factTeamGameState_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\dimOutcomeType_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factTeamShotType_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factPlayerGamePlay_RELOAD.sql" />
+    <Build Include="rfpl\Stored Procedures\factTeamShotZone_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factTeamTiming_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factPlayerPosition_INSERT.sql" />
+    <Build Include="rfpl\Stored Procedures\factMatches_INSERT.sql" />
+    <Build Include="dbo\Stored Procedures\factPlayerPosition_RELOAD.sql" />
+    <Build Include="rfpl\Stored Procedures\factMatchLineups_INSERT.sql" />
+    <Build Include="Security\app.sql" />
+    <Build Include="Security\bundesliga.sql" />
+    <Build Include="Security\dwh.sql" />
+    <Build Include="Security\epl.sql" />
+    <Build Include="Security\laliga.sql" />
+    <Build Include="Security\ligue1.sql" />
+    <Build Include="Security\rfpl.sql" />
+    <Build Include="Security\seriea.sql" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE ligue1.factTeamShotType_INSERT AS BEGIN INSERT INTO  ligue1.factTeamShotType SELECT team_id, outcome_key, shots_for, xG_for, shots_against, xG_against, SEASON FROM [landingdb].ligue1.factTeamShotType END

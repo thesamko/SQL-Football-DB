@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE epl.factTeamShotType_INSERT AS BEGIN INSERT INTO  epl.factTeamShotType SELECT team_id, outcome_key, shots_for, xG_for, shots_against, xG_against, SEASON FROM [landingdb].epl.factTeamShotType END

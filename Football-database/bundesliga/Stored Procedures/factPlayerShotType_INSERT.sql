@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE bundesliga.factPlayerShotType_INSERT AS BEGIN INSERT INTO  bundesliga.factPlayerShotType SELECT player_id, shot_type_key, goals_scored, shots, xG, assists, key_passes, xA, non_penalty_goals, npxG, SEASON FROM [landingdb].bundesliga.factPlayerShotType END

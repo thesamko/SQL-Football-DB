@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE epl.factTeamTiming_INSERT AS BEGIN INSERT INTO  epl.factTeamTiming SELECT team_id, timing, shots_for, goals_for, xG_for, shots_against, goals_against, xG_against, SEASON FROM [landingdb].epl.factTeamTiming END

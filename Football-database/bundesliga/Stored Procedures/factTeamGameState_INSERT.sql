@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE bundesliga.factTeamGameState_INSERT AS BEGIN INSERT INTO  bundesliga.factTeamGameState SELECT team_id, game_state, minutes_played, shots_for, goals_for, xG_for, shots_against, goals_against, xG_against, SEASON FROM [landingdb].bundesliga.factTeamGameState END

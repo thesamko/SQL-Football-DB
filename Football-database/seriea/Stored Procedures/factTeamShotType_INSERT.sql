@@ -1,0 +1,1 @@
+﻿CREATE PROCEDURE seriea.factTeamShotType_INSERT AS BEGIN INSERT INTO  seriea.factTeamShotType SELECT team_id, outcome_key, shots_for, xG_for, shots_against, xG_against, SEASON FROM [landingdb].seriea.factTeamShotType END
